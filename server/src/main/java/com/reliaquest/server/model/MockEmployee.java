@@ -2,11 +2,12 @@ package com.reliaquest.server.model;
 
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
-import java.util.UUID;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NonNull;
+
+import java.util.UUID;
 
 @Data
 @AllArgsConstructor

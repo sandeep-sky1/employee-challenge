@@ -3,9 +3,19 @@ plugins {
 }
 
 dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-webflux:3.2.12'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.wiremock.integrations:wiremock-spring-boot:3.2.0'
+    testImplementation 'org.springframework.boot:spring-boot-starter-logging'
+    testImplementation group: 'ch.qos.logback', name: 'logback-core', version: '1.5.12'
 }
 
 springBoot {
     mainClass = 'com.reliaquest.api.ApiApplication'
+}
+
+test {
+    useJUnitPlatform()
+    systemProperty "logging.level.org.springframework", "DEBUG"
+    systemProperty "logging.level.com.reliaquest.api", "DEBUG"
 }
